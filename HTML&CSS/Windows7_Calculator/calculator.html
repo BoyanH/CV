@@ -1,0 +1,128 @@
+ <DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="calculator.css" />
+	<title>Calculator</title>
+</head>
+<body>
+	<div id="wrap">
+		<img src="http://www.downloadfreeicon.com/icons_folder/icons/Thumbnail/Windows%20calculator.png" /> 
+			<span id="bold">Calculator</span>
+		<div class="wrap-buttons"><button id="x">X</button><button disabled>□</button><button>_</button></div>
+		<div id="calculator">
+			<nav>
+				<a href="#" class="tabs"><span>V</span>iew</a>
+				<a href="#" class="tabs"><span>E</span>dit</a>
+				<a href="#" class="tabs"><span>H</span>elp</a>
+			</nav>
+			<form id="display">
+				<input type="text" class="border" />
+			</form>
+			<table id="zeros" class="border">
+				<tr>
+					<td>0000</td><td>0000</td><td>0000</td><td>0000</td>
+					<td>0000</td><td>0000</td><td>0000</td><td>0000</td>
+				</tr>
+				<tr class="greytd">
+					<td colspan="4">63</td><td colspan="3">47</td><td>32</td>
+				</tr>
+				<tr>
+					<td>0000</td><td>0000</td><td>0000</td><td>0000</td><td>0000</td><td>0000</td><td>0000</td><td>0000</td>
+				</tr>
+				<tr class="greytd">
+					<td colspan="4">31</td><td colspan="3">15</td><td>0<td>
+				</tr>
+			</table>
+			<div id="radio">
+				<form class="radioform border">
+					<ul>
+						<li><input type="radio" name="radiotop" value="hex" />
+							<label for="radiotop" >Hex</label></li>
+						<li><input type="radio" name="radiotop" value="dec" checked />
+							<label for="radiotop">Dec</label></li>
+						<li><input type="radio" name="radiotop" value="oct" />
+							<label for="radiotop">Oct</label></li>
+						<li><input type="radio" name="radiotop"  value="bin"/>
+							<label for="radiotop">Bin</label></li>
+					</ul>
+				</form>
+				<form class="border">
+					<ul>
+						<li><input type="radio" name="radiobot" value="qword" checked/>
+							<label for="radiobot" >Qword</label></li>
+						<li><input type="radio" name="radiobot" value="dword" />
+							<label for="radiobot">Dword</label></li>
+						<li><input type="radio" name="radiobot" value="word" />
+							<label for="radiobot">Word</label></li>
+						<li><input type="radio" name="radiobot" value="byte"/>
+							<label for="radiobot">Byte</label></li>
+					</ul>
+				</form>
+			</div>
+			<div id="buttons">
+				<form>
+					<div id="row1">
+						<button disabled> </button>
+						<button class="shiny">Mod</button>
+						<button disabled>A</button>
+						<button class="notshiny">MC</button>
+						<button class="notshiny">MR</button>
+						<button class="notshiny">MS</button>
+						<button class="notshiny">M+</button>
+						<button class="notshiny">M-</button>
+					</div>
+					<div id="row2">
+						<button class="shiny">(</button>
+						<button class="shiny">)</button>
+						<button disabled>B</button>
+						<button class="shiny arrow">←</button>
+						<button class="shiny">CE</button>
+						<button class="shiny">C</button>
+						<button class="shiny">±</button>
+						<button disabled>√</button>
+					</div>
+					<div id="row3">
+						<button class="shiny">RoL</button>
+						<button class="shiny">RoR</button>
+						<button disabled>C</button>
+						<button class="nrbtn">7</button>
+						<button class="nrbtn">8</button>
+						<button class="nrbtn">9</button>
+						<button class="shiny">/</button>
+						<button disabled>%</button>
+					</div>
+					<div id="row4">
+						<button class="shiny">Or</button>
+						<button class="shiny">Xor</button>
+						<button disabled>D</button>
+						<button class="nrbtn">4</button>
+						<button class="nrbtn">5</button>
+						<button class="nrbtn">6</button>
+						<button class="shiny">*</button>
+						<button disabled>1/x</button>
+					</div>
+					<div id="row5">
+						<button class="shiny">Lsh</button>
+						<button class="shiny">Rsh</button>
+						<button disabled>E</button>
+						<button class="nrbtn">1</button>
+						<button class="nrbtn">2</button>
+						<button class="nrbtn">3</button>
+						<button class="shiny">-</button>
+					</div>
+					<div id="equal"><button class="shiny equal">=</button></div>
+					<div id="row6">
+						<button class="shiny">Not</button>
+						<button class="shiny">And</button>
+						<button disabled>F</button>
+						<button id="zero"  class="nrbtn">0</button>
+						<button disabled>,</button>
+						<button class="shiny">+</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

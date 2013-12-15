@@ -1,0 +1,24 @@
+body {
+	
+	width: 90%;
+	height: 100%;
+	background-color: black;
+}
+
+h1 {
+
+	color: yellow;
+	text-align: center;
+	font-family: Chiller;
+	margin-top: 5%;
+}
+
+canvas {
+	
+	width: 45%;
+	height: 50%;
+	margin-left: 30%;
+	margin-top: 3%;
+	border: 3px solid orange;
+	background-color: lime;
+}

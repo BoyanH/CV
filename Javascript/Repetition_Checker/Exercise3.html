@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise3</title>
+	<script type="text/javascript" src="exercise3.js"></script>
+	<style type="text/css">
+		textarea {
+			width: 300px;
+			height: 400px;
+			margin-top: 10px;
+		}
+		button {
+			position: relative;
+			bottom: 5px;
+		}
+	</style>
+</head>
+<body>
+	<p>How many times is the word given repeated in the text given?
+		<br>(The search is case sensitive! )
+	</p>
+	<label for="word">Word: </label>
+	<input type="text" id="word" >
+	<label for="textarea"></label>
+	<br>
+	<textarea id="textarea" ></textarea>
+	<button onclick="check();" >Check</button>
+	<p id="answer"></p>
+</body>
+</html>

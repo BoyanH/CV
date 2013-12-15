@@ -1,0 +1,57 @@
+body {
+    background-color: lime;
+    font-family: Chiller;
+}
+
+h1 {
+    text-align: center;
+    color: gray;
+}
+
+#carousel {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 10px 0;
+    height: 280px;
+    width: 400px;
+    text-align: center;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+#image-container {
+    position: relative;
+    left: 0;
+    width: 10000%;
+
+    -webkit-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+       -moz-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+         -o-transition: left .6s cubic-bezier(.86, 0, .07, 1);
+            transition: left .6s cubic-bezier(.86, 0, .07, 1);
+}
+
+.carousel-image {
+    float: left;
+    width: 1%;
+    margin-top: -10px;
+}
+
+img {
+    width: 400px;
+    height: 300px;
+}
+
+.carousel-arrow-left,
+.carousel-arrow-right {
+    position: absolute;
+    top: 45%;
+    z-index: 1;
+}
+
+.carousel-arrow-left {
+    left: 0; 
+}
+.carousel-arrow-right {
+    right: 0;
+}

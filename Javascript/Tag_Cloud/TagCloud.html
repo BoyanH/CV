@@ -1,0 +1,33 @@
+ <DOCTYPE html>
+<html>
+<head>
+	<title>A Tag Cloud</title>
+	<style type="text/css">
+		textarea {
+			float: left;
+			width: 500px;
+			height: 100px;
+		}
+
+		button {
+			display: block;
+			position: relative;
+			left: 80px;
+			top: 10px;
+			margin-bottom: 80px;
+		}
+ 
+	</style>
+</head>
+<body>
+	<h1>Create a tag cloud:</h1>
+	<p>Visualize a string of tags (strings) in a given container
+		<br>By given minFontSize and maxFontSize, generate the tags with different font-size, depending on the number of occurrences
+	</p>
+	<textarea  id="textarea"></textarea>
+	<input type="range" id="minFont" min="12" max="17">
+	<input type="range" id="maxFont" min="72" max="86">
+	<button onclick="execute();">Generate Tag Cloud!</button>
+	<script type="text/javascript" src="TagCloud.js"></script>
+</body>
+</html>

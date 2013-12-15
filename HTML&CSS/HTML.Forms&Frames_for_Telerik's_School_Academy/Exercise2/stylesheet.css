@@ -1,0 +1,31 @@
+table {
+	width:700px;
+	height:600px;
+	}
+.href:after {
+	content:"   ,";
+	color:black;
+	text-decoration:none;
+	display:inline-block;
+	}
+a:last-of-type:before {
+	content:"...";
+	color:black;
+	text-decoration:none;
+	display:inline-block;
+	}
+td {
+	border-left:1px solid grey;
+	border-top:1px solid grey;
+	}
+th {
+	border:1px solid grey;
+	}
+#footer {
+	border-bottom:1px solid grey;
+	border-right:1px solid grey;
+	}
+.total {
+	border-right:1px solid grey;
+	font-weight:bold;
+	}

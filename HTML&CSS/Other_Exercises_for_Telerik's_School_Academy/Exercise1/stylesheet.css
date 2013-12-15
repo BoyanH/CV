@@ -1,0 +1,19 @@
+ul {
+	list-style: none;
+	}
+li:not(:hover) li {
+	display: none;
+	}
+#lol {
+	color: red;
+	}
+span:hover {
+	text-decoration: underline;
+	color: lightgrey;
+	}
+li ul {
+	color: grey;
+	}
+#lol {
+	color: red;
+	}

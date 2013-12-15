@@ -1,0 +1,35 @@
+body {
+	font-family:Tahoma;
+	font-size: 90%;
+	}
+img {
+	width:150px;
+	}
+#border {
+	border:1px solid black;
+		}
+h1 {
+	text-align: center;
+	}
+h1 a {
+	color: #00E6E6;
+	}
+input[type=text] {
+	width:50px;
+	text-align: center;
+	}
+	input[type=range] {
+	width: 180px;
+	}
+.contenta:after {
+	content:" USD";
+	}
+.contentb:after {
+	content:"GB";
+	}
+fieldset {
+	border: 1px solid black;
+	}
+#preferences td {
+	font-size: 125%;
+	}

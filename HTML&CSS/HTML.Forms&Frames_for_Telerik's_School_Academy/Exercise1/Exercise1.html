@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+	</head>
+	<body>
+		<form method="post" action="form.asp" >
+			<table border="1" cellspacing="0" cellpadding="2">
+				<colgroup>
+					<col style="width:100px" /><col />
+				</colgroup>
+				<tbody>
+					<tr>
+						<td><label for="ln" class="float" >Last Name</label></td>
+						<td><input type="text" name="ln" autofocus="true" required="true" placeholder="Hristov" /></td>
+					</tr>
+					<tr>
+						<td><label for="fn" class="float" >First Name</label></td>
+						<td><input type="text" name="fn" required="true" placeholder="Boyan" /></td>
+					</tr>
+					<tr>
+						<td><label for="ad" class="float" id="address" >Address</label></td>
+						<td><textarea name="ad" required="true" placeholder="Bulgaria, Sofia, Gatyo Shishkov street, Nr.7"></textarea></td>
+					</tr>
+					<tr>
+						<td><label for="ct" class="float" >City</label></td>
+						<td>
+						<input type="text" name="ct" id="city" placeholder="Sofia"/>
+						<label for="st" >State</label>
+						<input type="text" name="st" id="state" placeholder="None" />
+						</td>
+					</tr>
+					<tr>
+						<td><label for="zpc" class="float">Zip/Postal Code</label></td>
+						<td><input type="text" name="zpc" required="true" placeholder="1407"/></td>
+					</tr>
+					<tr>
+						<td><label for="cy" class="float">Country</label></td>
+						<td>
+							<select name="cy">
+								<option value="Value 1" selected="true">Bulgaria</option>
+								<option value="Value 2" >England</option>
+								<option value="Value 3" >Germany</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="tel" class="float">Phone (country code, area code, number)</label>
+						<td>	
+							<span id="contenta"><input type="text" name="tel" id="cc" required="true" placeholder="+359"/></span>
+							<span id="contentb"><input type="text" id="ac" required="true" placeholder="88" /></span>
+							<input type="tel" id="tel" required="true" placeholder="27102XX" />
+						</td>
+					</tr>
+					<tr>
+						<td><label for="mail" class="float" >E-mail</label></td>
+						<td><input type="email" placeholder="email" pattern="[^ @]*@[^ @]*" required="true" /></td>
+					</tr>
+					<tr>
+						<td colspan="2" id="end">
+							<input type="submit" value="Submit"/>
+							<input type="reset" name="resetBtn" value="Clear This Form" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</body>
+</html>

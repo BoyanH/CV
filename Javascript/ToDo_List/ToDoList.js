@@ -15,6 +15,7 @@
 	//later we only change or remove this values
 	function add() {
 		
+		countLi();
 		input = document.getElementsByTagName("input")[0].value;
 		
 		var newListItem = document.createElement("li");
@@ -100,6 +101,8 @@
 	//if it is, we set the display to none (item is not displayed on the HTML page)
 	function hide() {
 
+		countLi();
+		
 		for(var k = 1; k <= liCount; k++) {
 			if (document.querySelector("#checkbox" + k).checked) {
 				document.querySelector("#listItem" + k).style.display = "none";
@@ -107,20 +110,27 @@
 																		//are hidden, we will remove the hidden as well
 			}
 		}
+
+		countLi();
 	}
 
 	//to show all Elements we simply set display property to an empty string, removing the "none"
 	function showAll() {
 
+		countLi();
+
 		for (var i = 1; i <= liCount; i++) {
 
 			document.querySelector("#listItem" + i).style.display = "";
 		}
+
+		countLi();
 	}
 
 	//We check if an element's box is checked, if it is - we remove that Element from the HTML
 	function deleteLi() {
 
+		countLi();
 		for(var z = 1; z <= liCount; z++) {
 			if (document.querySelector("#checkbox" + z).checked) {
 				document.querySelector("#listItem" + z).remove();

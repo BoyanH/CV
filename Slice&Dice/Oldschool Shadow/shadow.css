@@ -1,0 +1,53 @@
+#container {
+
+	width: 100%;
+}
+
+.shadow {
+
+	display: inline-block;
+	position: relative;
+    margin: 50px;
+}
+
+.shadow:nth-child(2) img { width: 200px; }
+.shadow:nth-child(3) img { width: 300px; }
+.shadow:nth-child(3) { float: left; }
+
+.shadow:before {
+
+    display: block;
+    position: absolute;
+    right: 0;
+    right: -2.3%;
+    margin-right: -5px;
+    padding-left: 14px;
+    top: 0;
+    top: 14.3%;
+    content: "";
+    height: 87%;
+    width: 100%;
+	background: url(pictures/shadow_side.png) repeat-y 98.1% 0%,
+                url(pictures/shadow_left_corner.png) no-repeat 5.4% 99.7%;
+				
+
+				
+}
+
+.shadow:after {
+
+	display: block;
+    position: absolute;
+    padding-right: 7px;
+    padding-top: 7px;
+    left: 0;
+    left: 7.5%;
+    bottom: 0;
+    bottom: -14.3%;
+    content: "";
+    height: 100%;
+    width: 92%;
+	background: url(pictures/shadow_corner.png) no-repeat 100.3% 87.1%,
+                url(pictures/shadow_top_corner.png) no-repeat 99.7% 0%,
+                url(pictures/shadow_bottom.png) repeat-x 0% 86.8%;		
+}

@@ -1,0 +1,56 @@
+#buttons {
+
+	width: 40%;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+
+.button a {
+	color: black;
+	text-decoration: none;
+	display: inline-block;
+	background: url(pictures/button_tile.png) repeat-x center top;
+	height: 48px;
+    line-height:45px;
+	overflow: hidden;
+}
+
+.button:last-of-type a{
+
+	color: blue;
+	text-decoration: underline;
+}
+
+.button {
+	position:relative;
+	margin-bottom: 10px;
+	margin-right: 50px;
+	padding-right: 16px;
+	display: inline-block;
+}
+
+
+.button:before {
+	display: block;
+    float:left;
+    content:"";
+    height:47px;
+    width:16.1px;
+	background: url(pictures/top_left_corner.png) no-repeat 0% -5%,
+				url(pictures/button_left_side.png) no-repeat 0% 43%,
+		        url(pictures/bottom_left_corner.png) no-repeat 0 105%;
+}
+
+.button:after {
+	display: block;
+    position:absolute;
+    right:0;
+    top:0;
+    right: -5px;
+    content:"";
+    height:47px;
+    width:21.1px;
+	background: url(pictures/top_right_corner.png) no-repeat 0% 0%,
+				url(pictures/button_right_side.png) no-repeat 0% 45%,
+        		url(pictures/bottom_right_corner.png) no-repeat 0 100%;
+}

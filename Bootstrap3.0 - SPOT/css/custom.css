@@ -1,0 +1,32 @@
+.tilt img {
+
+     max-width: 350px;
+}
+
+.bikecheck-img {
+
+	width: 600px;
+	margin-bottom: 10px;
+	padding-right: 50px;
+}
+
+.scroller {
+
+	height: 300px;
+	overflow: scroll;
+}
+
+.panel-heading {
+
+	margin-top: 0;
+}
+
+.carousel-control {
+
+	padding-top: 40%;
+}
+
+.no-margin-top {
+
+	margin-top: 0px;
+}

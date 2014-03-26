@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        body {
+
+            background-color: skyblue;
+        }
+
+        #snake-canvas {
+            display: block;
+            border: 3px outset magenta;
+            margin: 0 auto;
+        }
+
+        #controls {
+
+            width: 150px;
+            margin: 0 auto;
+        }
+
+        p {
+
+            display: block;
+            margin: 0 auto;
+            width: 250px;
+        }
+
+        #startBtn {
+
+            left: 50px;
+        }
+
+        #stopBtn {
+
+            right: 50px;         
+        }
+
+        #stopBtn, #startBtn {
+             
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 5px outset pink;
+            background-color: red;
+            font-size: 30px;
+
+            position: absolute;
+            top: 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <canvas id="snake-canvas" width="800" height="500"></canvas>
+    </div>
+
+    <button id="startBtn">Start</button>
+    <button id="stopBtn">Stop</button>
+        
+    <script type="text/javascript" src="scripts/snake.js"></script>
+    <script type="text/javascript" src="scripts/renderer.js"></script>
+    <script type="text/javascript" src="scripts/game.js"></script> 
+    <script type="text/javascript" src="scripts/main.js"></script>
+</body>
+</html>

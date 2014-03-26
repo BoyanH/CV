@@ -1,0 +1,142 @@
+ <!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise1</title>
+	<style type="text/css">
+		.form-holder {
+			float: left;
+			margin-right: 20px;
+		}
+
+		.task-holder {
+			clear: left;
+			margin-bottom: 50px;
+		}
+
+		input[type=number] {
+			width: 40px;
+		}
+
+		.answer {
+			clear: both;
+			float: left;
+			margin-left: 410px;
+			border: 1px dashed gray;
+			width: 600px;
+			display: none;
+			padding: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="task-holder">
+		<h1>Find the distance between the given two points</h1>
+		<div class="form-holder">
+			<div>
+				<label for="xCoordinatOne">Enter X coordinats for the first point (X1): </label>
+				<input type="number" name="xCoordinatOne" id="xCoordinatOne">
+			</div>
+			<div>
+				<label for="yCoordinatOne">Enter Y coordinats for the first point (Y1): </label>
+				<input type="number" name="yCoordinatOne" id="yCoordinatOne">
+			</div>
+		</div>
+
+		<div class="form-holder">
+			<div>
+				<label for="xCoordinatTwo">Enter X coordinats for the second point (X2): </label>
+				<input type="number" name="xCoordinatTwo" id="xCoordinatTwo">
+			</div>
+			<div>
+				<label for="yCoordinatTwo">Enter Y coordinats for the second point (Y2): </label>
+				<input type="number" name="yCoordinatTwo" id="yCoordinatTwo">
+			</div>
+		</div>
+
+		<button>Calculate Distance!</button>
+		<div id="answerDistance" class="answer"></div>
+	</div>
+	<div class="task-holder">
+		<h1>Find if these 3 lines form a triangle</h1>
+			<div class="form-holder">
+				<h4>Line 1</h4>
+			</div>
+		<div class="form-holder">
+			<div>
+				<label for="xOne">(X1): </label>
+				<input type="number" name="xOne" id="xOne">
+			</div>
+			<div>
+				<label for="yOne">(Y1): </label>
+				<input type="number" name="yOne" id="yOne">
+			</div>
+		</div>
+
+		<div class="form-holder">
+			<div>
+				<label for="xTwo">(X2): </label>
+				<input type="number" name="xTwo" id="xTwo">
+			</div>
+			<div>
+				<label for="yTwo">(Y2): </label>
+				<input type="number" name="yTwo" id="yTwo">
+			</div>
+		</div>
+
+		<div class="form-holder">
+			<h4>Line 2</h4>
+		</div>
+		<div class="form-holder">
+			<div>
+				<label for="xThree">(X3): </label>
+				<input type="number" name="xThree" id="xThree">
+			</div>
+			<div>
+				<label for="yThree">(Y3): </label>
+				<input type="number" name="yThree" id="yThree">
+			</div>
+		</div>
+
+		<div class="form-holder">
+			<div>
+				<label for="xFour">(X4): </label>
+				<input type="number" name="xFour" id="xFour">
+			</div>
+			<div>
+				<label for="yFour">(Y4): </label>
+				<input type="number" name="yFour" id="yFour">
+			</div>
+		</div>
+
+		<div class="form-holder">
+			<h4>Line 3</h4>
+		</div>
+		<div class="form-holder">
+			<div>
+				<label for="xFive">(X5): </label>
+				<input type="number" name="xFive" id="xFive">
+			</div>
+			<div>
+				<label for="yFive">(Y5): </label>
+				<input type="number" name="yFive" id="yFive">
+			</div>
+		</div>
+
+		<div class="form-holder">
+			<div>
+				<label for="xSix">(X6): </label>
+				<input type="number" name="xSix" id="xSix">
+			</div>
+			<div>
+				<label for="ySix">(Y6): </label>
+				<input type="number" name="ySix" id="ySix">
+			</div>
+		</div>
+	</div>
+
+	<button id="triangleButton">Check!</button>
+	<div id="answerTriangle" class="answer"></div>
+	
+	<script type="text/javascript" src="exercise1.js"></script>
+</body>
+</html>

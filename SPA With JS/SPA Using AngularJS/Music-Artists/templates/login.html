@@ -1,0 +1,33 @@
+<div class="container clearfix" ng-controller="LoginController" id="main-container" on-enter="login(user, loginForm)">
+    <h1>Login</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            
+            <form name="loginForm" id="loginForm" class="form-horizontal">
+            	<fieldset>
+            			<div class="alert alert-danger" ng-show="error.length > 1">{{error}}</div>
+                        <legend>Enter your user account information in order to log in</legend>
+                        <div class="form-group">
+                            <label for="user-name" class="col-lg-4 control-label">User Name Or E-mail</label>
+                            <div class="col-lg-8">
+                                <input type="text" class="form-control validity" id="user-name" placeholder="User Name" required ng-model="user.authenticationName" focus-on="focusAuthenticationName" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-lg-4 control-label">Password</label>
+                            <div class="col-lg-8">
+                                <input type="password" class="form-control validity" id="password" placeholder="***password***" required ng-model="user.keyword">
+                            </div>
+                        </div>
+                </fieldset>
+
+                <div class="pull-right">
+                    <button class="btn btn-default" ng-disabled="registerForm.$invalid" ng-click="login(user, loginForm)">Login</button>
+                    <button class="btn btn-default" ng-click="cancelEdit()">Cancel</button>
+                </div>
+            </form>
+        
+        </div>
+    </div>
+</div>

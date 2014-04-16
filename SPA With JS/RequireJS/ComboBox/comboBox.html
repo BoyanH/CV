@@ -1,0 +1,31 @@
+﻿ <!DOCTYPE html>
+<html>
+<head>
+	<title>Combo Box</title>
+	<script type="text/javascript" src="Scripts/libs/require.js" data-main="Scripts/app-config"></script>
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+	
+	<script type="x-mustache-template" id="person-template-expanded">	
+        
+        <div class="list-div" id="{{id}}">
+			<strong class="person-name">{{name}}</strong>
+		</div>
+		
+	</script>
+
+	<script type="x-mustache-template" id="person-template-collapsed">
+
+		<div class="list-div left" id="{{id}}">
+			<strong class="person-name">{{name}}</strong>
+		</div>
+
+		 <div class="person-item" id="person-item-{{id}}">
+	        <img src="{{avatarUrl}}" width="100px" class="left" />
+	  		<strong class="person-name">Name: {{name}}</strong><div class="person-age">Age: {{age}}</div>
+		</div>
+		
+	</script>
+</body>
+</html>

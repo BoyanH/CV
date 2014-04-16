@@ -1,0 +1,81 @@
+<div class="container clearfix" ng-controller="ProfileController" id="main-container">
+    <h1>Edit Profile</h1>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <form name="profileForm" class="form-horizontal">
+                <div class="col-md-6">
+                    <fieldset>
+                        <div class="alert alert-danger" ng-show="error.length > 1">{{error}}</div>
+                        <legend>Main information</legend>
+                        <div class="form-group">
+                            <label for="user-name" class="col-lg-3 control-label">Real Full Name</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control validity" id="user-name" placeholder="Name"  ng-model="user.name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="col-lg-3 control-label">E-mail Address</label>
+                            <div class="col-lg-9">
+                                <input type="email" class="form-control validity" id="email" placeholder="@e-mail@"  ng-model="user.email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="col-lg-3 control-label">Old Password</label>
+                            <div class="col-lg-9">
+                                <input type="password" class="form-control validity" id="password" placeholder="***password***"  ng-model="user.oldpassword">
+                            </div>
+                            <label for="password" class="col-lg-3 control-label">New Password</label>
+                            <div class="col-lg-9">
+                                <input type="password" class="form-control validity" id="password" placeholder="***password***"  ng-model="user.newpassword">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-md-6">
+                    <fieldset>
+                        <legend>Additional information</legend>
+                        <div class="form-group">
+                            <label for="school" class="col-lg-3 control-label">School</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="school" placeholder="School" ng-model="user.school">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address" class="col-lg-3 control-label">Address</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="address" placeholder="Address" ng-model="user.address">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="number" class="col-lg-3 control-label">Phone Number</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="number" placeholder="+359XX XXX XX XX" ng-pattern="/08[789]\d{7}/" ng-model="user.number">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="avatar" class="col-lg-3 control-label">Avatar URL</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control validity" id="avatar" placeholder="https://examplesite.com/examplepicture.jpg" ng-pattern="/\.(gif|jpg|jpeg|tiff|png)$/i" ng-model="user.avatar">
+                                <div class="col-md-6 image-container">
+                                    <img ng-src="{{user.avatar}}" src="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthday" class="col-lg-3 control-label">Date of Birth</label>
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control validity" id="birthday" placeholder="Date (dd/mm/yyyy)" ng-pattern='/^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g' ng-model="user.birthDate">
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="pull-right">
+                    <button class="btn btn-default" ng-disabled="profileForm.$invalid" ng-click="saveUser(user, profileForm)">Save</button>
+                    <button class="btn btn-default" ng-click="cancelEdit()">Cancel</button>
+                </div>
+            </form>
+            <button class="btn btn-default" ng-click="toTop()">Back to top</button>
+        </div>
+    </div>
+</div>

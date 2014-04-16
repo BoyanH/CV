@@ -1,0 +1,149 @@
+<div class="container clearfix" ng-controller="EditArtistController" id="main-container" on-enter="saveArtist(artist, newArtistForm)">
+
+    <div class="row">
+        <div class="col-lg-5">
+            <h1>Artist</h1>
+            <hr />
+            <div class="alert alert-danger" ng-show="error.length > 1">{{error}}</div>
+            <form name="newArtistForm" class="form-horizontal">
+                <fieldset>
+                    <legend>Main information</legend>
+                    <div class="form-group">
+                        <label for="name" class="col-lg-3 control-label">*Name</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control validity" id="name" placeholder="Name" required ng-model="artist.name" focus-on="artistName">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="image" class="col-lg-3 control-label">*Image URL</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control validity" id="image" placeholder="Image URL" required ng-pattern="/\.(gif|jpg|jpeg|tiff|png)$/i" ng-model="artist.image">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="created" class="col-lg-3 control-label">*Since</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control validity" id="created" placeholder="Date (dd/mm/yyyy)" required ng-pattern='/^(((0[1-9]|[12]\d|3[01])\/(0[13578]|1[02])\/((19|[2-9]\d)\d{2}))|((0[1-9]|[12]\d|30)\/(0[13456789]|1[012])\/((19|[2-9]\d)\d{2}))|((0[1-9]|1\d|2[0-8])\/02\/((19|[2-9]\d)\d{2}))|(29\/02\/((1[6-9]|[2-9]\d)(0[48]|[2468][048]|[13579][26])|((16|[2468][048]|[3579][26])00))))$/g' ng-model="artist.created" datepicker="">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Additional information</legend>
+                    <div class="form-group">
+                        <label for="location" class="col-lg-3 control-label">Location</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="location" placeholder="Location" ng-model="artist.additionalInformation.location">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="albums" class="col-lg-3 control-label">Albums</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" name="albums" id="albums" placeholder="Albums" ng-model="artist.additionalInformation.albums" integer>
+                        </div>
+                        <div ng-show="newArtistForm.albums.$error.integer">This is not valid integer!</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="singles" class="col-lg-3 control-label">Singles</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="singles" placeholder="Singles" ng-model="artist.additionalInformation.singles" integer>
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="pull-right">
+                    <button class="btn btn-default" ng-disabled="newArtistForm.$invalid" ng-click="saveArtist(artist, newArtistForm)">Save</button>
+                    <button class="btn btn-default" ng-click="cancelEdit()">Cancel</button>
+                </div>
+            </form>
+            <button class="btn btn-default" ng-click="toTop()">Back to top</button>
+        </div>
+
+        <!-- new form -->
+        <div class="form-group" class="col-md-7">
+            <ng-form name="newMemberForm" id="newMemberForm">
+                <h1>Add Band Member</h1>
+                <label for="bandmember" class="col-lg-2 control-label">Add Band Member</label>
+                <div class="col-lg-4">
+                    <input  type="text" class="form-control validity" id="bandmember" placeholder="Name" required ng-model="bandMember">
+                    <button class="btn btn-default" ng-disabled="newMemberForm.$invalid" ng-click="addBandMember(bandMember, newMemberForm)">Add</button>
+                </div>
+                <div id="bandmember-display" class="col-lg-7">
+                    <div class="col-lg-5">
+                        <h4>Existing Band Members: </h4>
+                        <div ng-cloak ng-repeat="bandMember in bandMembers track by $index" ng-model="bandMember">
+                            [{{$index + 1}}] {{bandMember}}
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <h4>Existing Albums: </h4>
+                        <div ng-cloak ng-repeat="albumView in albumViews track by $index" ng-model="albumViews">
+                            [{{$index + 1}}] {{albumView}}
+                        </div>
+                    </div>
+                </div>
+            </ng-form>
+        </div>
+
+        <!-- new form -->
+        <div class="col-md-6">
+            <h1>Add Albums</h1>
+            <hr />
+            <form name="newAlbumForm" id="newAlbumForm" class="form-horizontal">
+                <fieldset>
+                    <legend>Main information</legend>
+                    <div class="form-group">
+                        <label for="album-name" class="col-lg-3 control-label">Name</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control validity" id="album-name" placeholder="Name" required ng-model="album.name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="album-image" class="col-lg-3 control-label">Image URL</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control validity" id="album-image" placeholder="Image URL" required ng-pattern="/\.(gif|jpg|jpeg|tiff|png)$/i" ng-model="album.image">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="album-created" class="col-lg-3 control-label">Released</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control validity" id="album-created" placeholder="Year" required ng-model="album.year">
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Additional information</legend>
+                    <div class="form-group">
+                        <label for="album-location" class="col-lg-3 control-label">Songs</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="album-location" placeholder="Songs" ng-model="album.songs">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="album-price" class="col-lg-3 control-label">Price</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="album-price" placeholder="Price" ng-model="album.price">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="singles" class="col-lg-3 control-label">Status</label>
+                        <div class="col-md-9" style="margin-top: 10px">
+                            <label for="discontinued">Discontinued</label><input type="radio" ng-model="album.status" ng-value="1" id="discontinued" style="margin-right: 6px">
+                            <label for="selling">Selling</label><input type="radio" ng-model="album.status" ng-value="2" id="selling" style="margin-right: 6px">
+                            <label for="unreleased">Unreleased</label><input type="radio" ng-model="album.status" ng-value="3" id="unreleased" style="margin-right: 6px">
+                        </div>
+                    </div>
+                </fieldset>
+                <div class="pull-right">
+                    <button class="btn btn-default" ng-disabled="newAlbumForm.$invalid" ng-click="addAlbum(album, newAlbumForm)">Add</button>
+                    <button class="btn btn-default" ng-click="cancelAlbum()">Cancel</button>
+                </div>
+            </form>
+            <button class="btn btn-default" ng-click="toTop()">Back to top</button>
+
+        </div>
+
+        <div class="col-md-12 image-container">
+            <div class="col-md-6"> <img ng-cloak ng-src="{{artist.image}}" src=""  /> </div>
+            <div class="col-md-6"> <img ng-cloak ng-src="{{album.image}}" src=""  /> </div>
+        </div>
+    </div>
+</div>

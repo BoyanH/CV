@@ -1,0 +1,34 @@
+<ul class="nav nav-tabs">
+    <li ng-repeat="album in artist.albums | limitTo: 3 | orderBy: sort | filter: search">
+        <a href="#album-{{album.id}}" target="_self" data-toggle="tab">{{album.name}} ({{album.rating}})</a>
+    </li>
+    <li ng-if="artist.albums.length > 3">
+        <a href="#/all-albums/filter/{{artist.name}}">All</a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane fade" ng-repeat="album in artist.albums | limitTo: 3" id="album-{{album.id}}">
+        <div class="panel panel-default">
+            <div album-details album="album" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            <strong>Rating: </strong> {{album.rating}}
+                            <button class="btn btn-sm" ng-click="downAlbumRating(album)">-</button>
+                            <button class="btn btn-sm" ng-click="upAlbumRating(album)">+</button>
+                            <div class="alert alert-danger" ng-show="error.length > 1">{{error}}</div>
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>
+                            <a class="btn btn-default btn-sm" href="#/artist-details/{{ artist.id }}/edit-album/{{ album.id }}">Edit</a>
+                        <p/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

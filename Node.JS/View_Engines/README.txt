@@ -1,0 +1,1 @@
+After writing 'npm install'' in the command prompt make sure you have a mongo database running on the default port and then type 'grunt' in the command prompt.

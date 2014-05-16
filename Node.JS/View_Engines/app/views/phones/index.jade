@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+	each value in phones
+		.panel.panel-default
+			.panel-heading
+				h3
+					=value.name
+			.panel-body
+				.img
+					img.phoneimg(src=value.picture)
+				.label.label-primary
+					= 'Price: ' + value.price + 'BGN'
+				button.buybtn
+					|BUY
+				button.buybtn
+					|Add to Cart

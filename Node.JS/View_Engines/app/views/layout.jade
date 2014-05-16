@@ -1,0 +1,27 @@
+doctype 5
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width')
+    title= '™DreamTechnologies'
+    block css
+      link(rel='stylesheet', href='/components/bootstrap/dist/css/bootstrap.min.css')
+      include styles.css
+    block js
+      script(src='http://localhost:35729/livereload.js')
+  body
+    nav.navbar.navbar-inverse(role="navigation")
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href="/")
+            |HOME
+        .collapse.navbar-collapse
+          ul.nav.navbar-nav
+            each item in navitems
+              li
+                a(href=item.link)
+                  =item.content
+    div.page-header
+      h1
+        =title       
+    block content

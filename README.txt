@@ -1,1 +1,0 @@
-In order to run this app you will need to have a running MongoDB database on the default port and install all the node_modules.

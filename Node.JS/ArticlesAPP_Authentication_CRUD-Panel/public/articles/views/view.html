@@ -1,0 +1,14 @@
+<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
+    <span>{{article.created | date:'medium'}}</span> /
+    <span>{{article.user.name}}</span>
+    <h2>{{article.title}}</h2>
+    <div data-ng-show="user._id == article.user._id || user['roles'].indexOf('admin') > -1">
+        <a class="btn" href="/#!/articles/{{article._id}}/edit">
+            <i class="glyphicon glyphicon-edit">Edit</i>
+        </a>
+        <a class="btn" data-ng-click="remove();">
+            <i class="glyphicon glyphicon-trash">Delete</i>
+        </a>
+    </div>
+    <div>{{article.content}}</div>
+</section>

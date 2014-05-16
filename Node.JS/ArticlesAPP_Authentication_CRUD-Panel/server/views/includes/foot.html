@@ -1,0 +1,30 @@
+{% for file in assets.js %}
+    <script type="text/javascript" src="{{file}}"></script>
+{% endfor %}
+
+{% if (process.env.NODE_ENV == 'development') %}
+    <!-- Livereload script rendered -->
+    <script type="text/javascript" src="{{'http://' + req.host + ':35729/livereload.js'}}"></script>
+{% endif %}
+
+<script type="text/javascript">
+
+d=document;d.write('<a href="http://www.tyxo.bg/?158105" title="Tyxo.bg counter"><img width="1" height="1" border="0" alt="Tyxo.bg counter" src="'+location.protocol+'//cnt.tyxo.bg/158105?rnd='+Math.round(Math.random()*2147483647));
+d.write('&sp='+screen.width+'x'+screen.height+'&r='+escape(d.referrer)+'"></a>');
+
+</script>
+
+
+<footer class="site-footer" role="contentinfo">
+	<div class="row">
+		<div class="col-md-12 site-footer">
+
+			<span>
+				//© Written by Boyan Hristov // | Page views: 
+					<img src="http://simplehitcounter.com/hit.php?uid=1722493&f=0&b=16777215" border="0" height="18" width="83" />
+			</span>
+
+		</div>
+	</div>
+</footer>
+

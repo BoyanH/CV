@@ -1,0 +1,37 @@
+<section data-ng-controller="UserController" data-ng-init="findOne()" data-ng-init="findArticles()">
+    <h1>User Details</h1>
+
+    <div class="panel panel-primary">
+    	<div class="panel-heading">
+        	<h3 class="panel-title">{{user.username}}</h3>
+    	</div>
+    	<div class="panel-body">
+	        <table class="table">
+		    	<tr class="well well-lg separate-top">
+		    		<td>Full Name</td><td>{{user.name}}</td>
+		    	</tr>
+		    	<tr class="well well-lg separate-top">
+		    		<td>E-mail</td><td>{{user.email}}</td>
+		    	</tr>
+		    	<tr class="well well-lg separate-top">
+		    		<td>Role</td><td>{{user.roles[user.roles.length -1]}}</td>
+		    	</tr>
+		    	<tr class="well well-lg separate-top">
+		    		<td>Articles</td>
+		    		<td>{{articles.length}} <button ng-click="toggleShow()">{{button}}</button></td>
+		    	</tr>
+		    </table>
+		    <ul class="articles unstyled" ng-show="show">
+		        <li data-ng-repeat="article in articles" class="well well-lg">
+		            <span>{{article.created | date:'medium'}}</span> /
+		            <span>{{article.user.name}}</span>
+		            <h2><a data-ng-href="#!/articles/{{article._id}}">{{article.title}}</a></h2>
+		            <div>{{article.content}}</div>
+		        </li>
+		    </ul>
+		    <h1 data-ng-hide="!articles || articles.length || !global.user === user || !global.user">No articles yet. <br> Why don't you <a href="/#!/articles/create">
+		    	Create One</a>?</h1>
+    	</div>
+    </div>
+
+</section>

@@ -1,0 +1,32 @@
+<section data-ng-controller="UsersController" data-ng-init="findOne()">
+    <h1>User Details</h1>
+
+    <form class="form-horizontal col-md-12" role="form" data-ng-submit="update()">
+	    <div class="panel panel-primary">
+	    	<div class="panel-heading">
+	        	<h3 class="panel-title">{{user.username}}</h3>
+	    	</div>
+	    	<div class="panel-body">
+		        <table class="table">
+			    	<tr class="well well-lg separate-top">
+			    		<td>Full Name</td><td><input ng-model="user.name"></td>
+			    	</tr>
+			    	<tr class="well well-lg separate-top">
+			    		<td>E-mail</td><td><input ng-model="user.email"></td>
+			    	</tr>
+			    	<tr class="well well-lg separate-top">
+			    		<td>Role</td><td>
+			    		<label for="admin">Admin</label>
+			    		<input type="checkbox" name="admin" ng-checked="admin" ng-model="admin"></td>
+			    	</tr>
+			    </table>
+	    	</div>
+	    	<div class="form-group">
+	            <div class=" col-md-9 separate-left">
+	                <button mean-token="'edit-submit'" type="submit" class="btn btn-lg btn-danger">Submit</button>
+	            </div>
+	        </div>
+	    </div>
+	</form>
+
+</section>

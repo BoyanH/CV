@@ -1,0 +1,21 @@
+<section data-ng-controller="UsersController" data-ng-init="find()">
+	<h1>All Users</h1>
+	<h4 class="margin-list"><i>//Visible for admins only//</i></h4>
+	<div class="alert alert-danger" ng-show="!(global.user['roles'].indexOf('admin') > -1) && global.user">
+		Oh snap! It is none of your buisness to mess with the users when you are not an admin!
+	</div>
+    <ul class="unstyled">
+        <li data-ng-repeat="user in users" class="well list-group-item list-group-item-danger">
+            <span><a href="/#!/user/{{user._id}}">{{user.username}}</a></span> /
+            <span>Role: {{user.roles[1] || 'user'}}</span>
+            <div data-ng-show="(global.user._id == article.user._id || global.user['roles'].indexOf('admin') > -1) && user.username !== 'BoyanH'">
+		        <a class="btn" href="/#!/admin/user/{{user._id}}">
+		            <i class="glyphicon glyphicon-edit">Edit</i>
+		        </a>
+		        <a class="btn" data-ng-click="remove(user);">
+		            <i class="glyphicon glyphicon-trash">Delete</i>
+		        </a>
+		    </div>
+        </li>
+    </ul>
+</section>
